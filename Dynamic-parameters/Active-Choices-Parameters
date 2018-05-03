@@ -1,0 +1,48 @@
+Active Choices Parameter:
+
+Groovy Script:
+
+return[
+'',
+'Production',
+'Development',
+'Test',
+'Stage'
+]
+
+Fallback Script:
+
+return['error']
+
+Active Choices Reactive Parameter:
+
+Groovy Script:
+
+if (Environment.equals("Production")) {
+  return ["Prod01", "Prod02", "Prod03", "Prod04"]
+} else if (Environment.equals("Development")) {
+  return ["Dev01", "Dev02"]
+} else if (Environment.equals("Test")) {
+  return ["Test01", "Test02"]
+} else if (Environment.equals("Stage")) {
+  return ["Stage01", "Stage02"]
+} else {
+  return ["Select an Environment from drop down"]
+}
+
+
+Groovy Script 2:
+
+if (Servers.equals("Prod01")) {
+  return ["Printer01", "Printer02", "Printer03"]
+} else if (Servers.equals("Prod02")) {
+  return ["Printer04", "Printer05"]
+} else if (Servers.equals("Prod03")) {
+  return ["Printer06", "Printer07"]
+} else if (Servers.equals("Prod04")) {
+  return ["Stage01", "Stage02"]
+} else {
+  return ["Select a Server from drop down"]
+}
+
+
